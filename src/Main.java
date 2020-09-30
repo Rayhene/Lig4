@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Jogador jogadorUm = new Jogador();
-        Jogador jogadorDois = new Jogador();
+        Jogador jogadorUm = new Jogador("sarah");
+        Jogador jogadorDois = new Jogador("rayhene");
 
         Partida partida = new Partida(jogadorUm, jogadorDois);
 
-        partida.Jogada(0);
-        partida.Jogada(1);
-        partida.Jogada(2);
-        partida.Jogada(3);
-        partida.Jogada(4);
+        partida.fazerJogada(0);
+        partida.fazerJogada(1);
+        partida.fazerJogada(2);
+        partida.fazerJogada(3);
+        partida.fazerJogada(4);
 
     }
 }

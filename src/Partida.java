@@ -1,23 +1,37 @@
 public class Partida {
-    Jogador jogadorUm;
-    Jogador jogadorDois;
-    boolean fim;
-    boolean temVencedor;
-    int jogadorDaVez = 1;
 
-    public Partida(Jogador jogadorUm, Jogador jogadorDois) {
-        this.jogadorUm = jogadorUm;
-        this.jogadorDois = jogadorDois;
-    }
+		Jogador jogadorUm;
+		Jogador jogadorDois;
+		
+		boolean fim;
+		boolean vencedor;
+		int jogadorDaVez;
+		
+		Tabuleiro tabuleiro;
 
-    public void Jogada(int x) {
+		public Partida(Jogador jogadorUm, Jogador jogadorDois) {
+			this.jogadorUm = jogadorUm;
+			this.jogadorDois = jogadorDois;
+			this.fim = false;
+			this.jogadorDaVez = 1;
+			this.tabuleiro = new Tabuleiro();
+		}
 
-        System.out.println("Agora é a vez do jogador: " + jogadorDaVez);
-        System.out.println("O jogador " + jogadorDaVez + " fez a jogada " + x + '\n');
-
-        if (jogadorDaVez == 1) jogadorDaVez += 1;
-        else jogadorDaVez -= 1;
 
 
-    }
+		public void fazerJogada(int x){
+					
+			System.out.println("O jogador " +jogadorDaVez+ " fez a jogada " +x);
+			
+			if(jogadorDaVez == 1) {
+				jogadorDaVez = 2;
+			}
+			else {
+				jogadorDaVez = 1;
+			}
+			
+			System.out.println(tabuleiro.toString());
+			
+		}
+		
 }

@@ -28,24 +28,6 @@ public class Tabuleiro {
 		}
 	}
 	
-	
-	
-	public static void main(String[] args)  {
-		
-		Tabuleiro t = new Tabuleiro();
-		System.out.println(t.toString());
-
-		t.preencher(3, 1);
-		System.out.println(t.toString());
-		t.preencher(2, 2);
-		System.out.println(t.toString());
-		t.preencher(3, 1);
-		System.out.println(t.toString());
-		t.preencher(3, 2);
-		System.out.println(t.toString());
-			
-	}
-	
 	@Override
 	public String toString() { //o toString aqui printa o tabuleiro bonitinho
 		String str = " (0) (1) (2) (3) (4) (5) (6) \n"; //linha fixa
@@ -53,7 +35,7 @@ public class Tabuleiro {
 			str += "|---.---.---.---.---.---.---|\n"; //linhas fixas
 			for (int coluna = 0; coluna < y; coluna++) {
 				if(tab[linha][coluna] == 0) { //o if é para quando o espaço tiver vazio
-					str += "|   ";
+					str += "|   "; 
 				}
 				else {
 					str += "| " +tab[linha][coluna]+ " "; //o else é para quando tiver algum número printado (1 ou 2 no caso)
@@ -61,7 +43,82 @@ public class Tabuleiro {
 			}
 			str += "|\n";
 		}
-		str += "|===.===.===.===.===.===.===|"; //linha fixa
-		return str;
+		str += "|===.===.===.===.===.===.===|"; //inha fixa
+		return str; //retorna o tabuleiro
 	}
+	
+	
+	/*public int verificarVencedor() {
+		
+		int j1=0, j2=0;
+		
+		//verficando as linhas
+		for(int linha = 0; linha < x ; linha++) {
+			 j1=0;
+			 j2=0;
+			for(int coluna = 0; coluna < y ; coluna++) {
+				if( tab[linha][coluna] == 1) {
+					j1++;
+					j2 = 0;
+					
+				}
+				else if(tab[linha][coluna] == 2){
+					j2++;
+					j1 = 0;
+				}
+				else {
+					j1 = 0;
+					j2 = 0;
+				}
+			}
+			if(j1 >= 4) {
+				return 1;
+			}
+			else if (j2 >= 4) {
+				return 2;
+			}
+		}
+		//verificando as colunas
+		for(int coluna = 0; coluna < y ; coluna++) {
+			 j1=0;
+			 j2=0;
+			for(int linha = 0; linha < x ; linha++) {
+				if( tab[linha][coluna] == 1) {
+					j1++;
+					j2 = 0;
+					
+				}
+				else if(tab[linha][coluna] == 2){
+					j2++;
+					j1 = 0;
+				}
+				else {
+					j1 = 0;
+					j2 = 0;
+				}
+			}
+			if(j1 >= 4) {
+				return 1;
+			}
+			else if (j2 >= 4) {
+				return 2;
+			}
+		}
+		return 0;
+	}*/
+		
+	/*public boolean existePosicaoDisponivel() {
+		
+		//verficando as linhas e colunas
+		for(int linha = 0; linha < x ; linha++) {
+
+			for(int coluna = 0; coluna < y ; coluna++) {
+				if( tab[linha][coluna] == 0) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}	*/	
 }

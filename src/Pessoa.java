@@ -1,7 +1,7 @@
 
 public class Pessoa {
 
-	String nome;
+	private final String nome;
 
 	public Pessoa(String nome) {
 		this.nome = nome;
@@ -9,7 +9,7 @@ public class Pessoa {
 		
 	@Override
 	public String toString() {
-		return "O nome do jogador é: " + nome;
+		return "Nome do jogador é: " + nome;
 	}
 
 }

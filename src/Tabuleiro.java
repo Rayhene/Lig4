@@ -1,6 +1,7 @@
 
 public class Tabuleiro {
 
+
 	int x = 6, y = 7;
 	int tab[][] = new int[x][y];
 	
@@ -12,7 +13,7 @@ public class Tabuleiro {
 		}
 	}
 	
-	public void preencher(int posicaoX, int numero) { //esse método encontra uma posição vazia
+	public void preencher(int posicaoX, int valor) { //esse método encontra uma posição vazia
 		
 		int linhaAux = 0; // a linha Auxiliar é para "escanear" a linha após a linha atual
 		
@@ -20,11 +21,11 @@ public class Tabuleiro {
 			linhaAux ++;
 		}
 		
-		if (linhaAux != 0 ) { //se a próxima linha estiver vazia entao, um numero é printado nela, 1 ou 2 dependendo do jogador da vez
-		 tab [linhaAux -1][posicaoX] = numero;
+		if (linhaAux != 0 ) { //se a próxima linha estiver vazia entao, um numero é printado nela, 1 ou 2 dependendo do valor jogador da vez
+		 tab [linhaAux -1][posicaoX] = valor;
 		}
 		else {
-			System.out.println("A coluna" +posicaoX+ "já está preenchida"); //essa mensagem é printada caso a coluna escolhida ja esteja cheia e nao hajam posições disponiveis
+			System.out.println("A coluna " +posicaoX+ " já está preenchida"); //essa mensagem é printada caso a coluna escolhida ja esteja cheia e nao hajam posições disponiveis
 		}
 	}
 	

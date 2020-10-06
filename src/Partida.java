@@ -3,35 +3,38 @@ public class Partida {
 		Jogador jogadorUm;
 		Jogador jogadorDois;
 		
-		boolean fim;
-		boolean vencedor;
-		int jogadorDaVez;
+		private boolean fim;
+		private boolean vencedor;
+		private int jogadorDaVez;
 		
 		Tabuleiro tabuleiro;
 
-		public Partida(Jogador jogadorUm, Jogador jogadorDois) {
-			this.jogadorUm = jogadorUm;
-			this.jogadorDois = jogadorDois;
-			this.fim = false;
-			this.jogadorDaVez = 1;
-			this.tabuleiro = new Tabuleiro();
-		}
-
+	public Partida(String nomeJogadorUm, String nomeJogadorDois) {
+		this.jogadorUm = new Jogador(nomeJogadorUm, 1);
+		this.jogadorDois = new Jogador(nomeJogadorDois, 2);
+		this.fim = false;
+		this.jogadorDaVez = jogadorUm.getValor();
+		this.tabuleiro = new Tabuleiro();
+	}
 
 
 		public void fazerJogada(int x){
 					
 			System.out.println("O jogador " +jogadorDaVez+ " fez a jogada " +x);
-			
-			if(jogadorDaVez == 1) {
-				jogadorDaVez = 2;
+
+
+			tabuleiro.preencher(x, jogadorDaVez);
+
+			if(jogadorDaVez == jogadorUm.getValor()) {
+				jogadorDaVez = jogadorDois.getValor();
 			}
 			else {
-				jogadorDaVez = 1;
+				jogadorDaVez = jogadorUm.getValor();
 			}
 			
 			System.out.println(tabuleiro.toString());
 			
 		}
-		
+
+
 }

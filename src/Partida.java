@@ -9,7 +9,7 @@ public class Partida {
 		
 		Tabuleiro tabuleiro;
 
-	public Partida(String nomeJogadorUm, String nomeJogadorDois) {
+		public Partida(String nomeJogadorUm, String nomeJogadorDois) {
 		this.jogadorUm = new Jogador(nomeJogadorUm, 1);
 		this.jogadorDois = new Jogador(nomeJogadorDois, 2);
 		this.fim = false;

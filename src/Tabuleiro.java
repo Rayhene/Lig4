@@ -13,19 +13,22 @@ public class Tabuleiro {
 		}
 	}
 	
-	public void preencher(int posicaoX, int valor) { //esse método encontra uma posição vazia
+	public boolean preencher(int posicaoX, int valor) { //esse método encontra uma posição vazia
 		
 		int linhaAux = 0; // a linha Auxiliar é para "escanear" a linha após a linha atual
 		
 		while (linhaAux < x && tab[linhaAux][posicaoX] == 0) { //o while é utilizado para incrementar a linha auxilixar que verifica se a próxima linha está vazia ou não
 			linhaAux ++;
 		}
+
 		
 		if (linhaAux != 0 ) { //se a próxima linha estiver vazia entao, um numero é printado nela, 1 ou 2 dependendo do valor jogador da vez
 		 tab [linhaAux -1][posicaoX] = valor;
+		 return true;
 		}
 		else {
-			System.out.println("A coluna " +posicaoX+ " já está preenchida"); //essa mensagem é printada caso a coluna escolhida ja esteja cheia e nao hajam posições disponiveis
+			System.out.println("A coluna " +posicaoX+ " já está preenchida. Jogue novamente."); //essa mensagem é printada caso a coluna escolhida ja esteja cheia e nao hajam posições disponiveis
+			return false;
 		}
 	}
 	

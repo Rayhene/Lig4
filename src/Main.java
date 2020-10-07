@@ -11,10 +11,14 @@ public class Main {
         partida.fazerJogada(0);
         partida.fazerJogada(0);
         partida.fazerJogada(0);
+        partida.fazerJogada(0);
+        partida.fazerJogada(0);
+        partida.fazerJogada(0);
+        partida.fazerJogada(0);
+        partida.fazerJogada(0);
+        partida.fazerJogada(0);
         partida.fazerJogada(1);
-        partida.fazerJogada(1);
-        partida.fazerJogada(1);
-        partida.fazerJogada(4);
+        partida.fazerJogada(2);
 
 
     }

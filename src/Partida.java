@@ -1,3 +1,7 @@
+/**
+ *  Projeto de LPOO - Lig4 (Parte II)
+ *  Dupla: Rayhene Ranúzia e Sarah Medeiros
+ */
 public class Partida {
 
 		Jogador jogadorUm;
@@ -17,33 +21,35 @@ public class Partida {
 		this.tabuleiro = new Tabuleiro();
 	}
 
+	public int getJogadorDaVez() {
+		if(jogadorDaVez == 1){
+			System.out.println();
+		}
+		return jogadorDaVez;
+	}
 
-		public void fazerJogada(int x){
+	public void fazerJogada(int x){
 
-			boolean jogada; //variável para armazenar o retorno de preencher, true se o jogador fez a jogada e false se não fez ainda
+			if(!(tabuleiro.preencher(x, jogadorDaVez)))
+				return;
 
-			jogada = tabuleiro.preencher(x, jogadorDaVez);
+			System.out.println("O jogador " +jogadorDaVez+ " fez a jogada " +x);
+			System.out.println(getStringTabuleiro());
+			trocaJogador();
 
-			if(jogada){
-				System.out.println("O jogador " +jogadorDaVez+ " fez a jogada " +x);
-			}else{
-				controleJogador(); // troca de jogador pra ele não perder a vez quando tentar jogar em uma posição já preenchida  
-			}
-
-			controleJogador(); //troca o jogador da vez
-			
-			System.out.println(tabuleiro.toString());
 		}
 
+	public String getStringTabuleiro(){
+		return tabuleiro.toString();
+	}
 
-		public void controleJogador(){
-			if(jogadorDaVez == jogadorUm.getValor()) {
-				jogadorDaVez = jogadorDois.getValor();
-			}
-			else {
-				jogadorDaVez = jogadorUm.getValor();
-			}
+	public void trocaJogador(){
+		if(jogadorDaVez == jogadorUm.getValor()) {
+			jogadorDaVez = jogadorDois.getValor();
 		}
-
+		else {
+			jogadorDaVez = jogadorUm.getValor();
+		}
+	}
 
 }

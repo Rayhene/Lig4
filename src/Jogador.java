@@ -1,3 +1,7 @@
+/**
+ *  Projeto de LPOO - Lig4 (Parte II)
+ *  Dupla: Rayhene Ranúzia e Sarah Medeiros
+ */
 public class Jogador extends Pessoa {
 
 

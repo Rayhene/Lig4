@@ -1,9 +1,12 @@
-
+/**
+ *  Projeto de LPOO - Lig4 (Parte II)
+ *  Dupla: Rayhene Ranúzia e Sarah Medeiros
+ */
 public class Tabuleiro {
 
 
 	int x = 6, y = 7;
-	int tab[][] = new int[x][y];
+	int[][] tab = new int[x][y];
 	
 	public Tabuleiro() { //no construtor preenchemos todo o tabuleiro 6x7 com "0" em cada "casa"
 		for (int linha = 0; linha < x; linha++) {
@@ -52,77 +55,4 @@ public class Tabuleiro {
 	}
 	
 	
-	/*public int verificarVencedor() {
-		
-		int j1=0, j2=0;
-		
-		//verficando as linhas
-		for(int linha = 0; linha < x ; linha++) {
-			 j1=0;
-			 j2=0;
-			for(int coluna = 0; coluna < y ; coluna++) {
-				if( tab[linha][coluna] == 1) {
-					j1++;
-					j2 = 0;
-					
-				}
-				else if(tab[linha][coluna] == 2){
-					j2++;
-					j1 = 0;
-				}
-				else {
-					j1 = 0;
-					j2 = 0;
-				}
-			}
-			if(j1 >= 4) {
-				return 1;
-			}
-			else if (j2 >= 4) {
-				return 2;
-			}
-		}
-		//verificando as colunas
-		for(int coluna = 0; coluna < y ; coluna++) {
-			 j1=0;
-			 j2=0;
-			for(int linha = 0; linha < x ; linha++) {
-				if( tab[linha][coluna] == 1) {
-					j1++;
-					j2 = 0;
-					
-				}
-				else if(tab[linha][coluna] == 2){
-					j2++;
-					j1 = 0;
-				}
-				else {
-					j1 = 0;
-					j2 = 0;
-				}
-			}
-			if(j1 >= 4) {
-				return 1;
-			}
-			else if (j2 >= 4) {
-				return 2;
-			}
-		}
-		return 0;
-	}*/
-		
-	/*public boolean existePosicaoDisponivel() {
-		
-		//verficando as linhas e colunas
-		for(int linha = 0; linha < x ; linha++) {
-
-			for(int coluna = 0; coluna < y ; coluna++) {
-				if( tab[linha][coluna] == 0) {
-					return true;
-				}
-			}
-		}
-		
-		return false;
-	}	*/	
 }
